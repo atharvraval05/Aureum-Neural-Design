@@ -5,6 +5,7 @@ import {
   signInWithEmailAndPassword, 
   createUserWithEmailAndPassword,
   signInWithPopup,
+  signInWithRedirect,
   GoogleAuthProvider,
   GithubAuthProvider
 } from 'firebase/auth';
@@ -69,7 +70,13 @@ const AuthModal: React.FC<AuthModalProps> = ({ isOpen, onClose, initialMode = 'l
       await signInWithPopup(auth, authProvider);
       onClose();
     } catch (err: any) {
-      if (err.code === 'auth/unauthorized-domain') {
+      if (err.code === 'auth/popup-blocked') {
+        try {
+          await signInWithRedirect(auth, authProvider);
+        } catch (redirectErr: any) {
+          setError("Your browser blocked the popup window. Please allow popups or try again.");
+        }
+      } else if (err.code === 'auth/unauthorized-domain') {
         setError("This domain is not authorized in your Firebase Console. Please add this URL to your 'Authorized domains' in the Firebase Auth settings.");
       } else {
         setError(err.message);
