@@ -1,6 +1,6 @@
 # 𝗔𝘂𝗿𝗲𝘂𝗺 ─ Spatial Intelligence Design Suite 🏡✨
 
-Aureum is a next-generation, AR/VR-inspired spatial interior designer web application. It bridges the gap between text-based neural models and physical spaces by digitizing real-world environments and generating photorealistic style transformations in real-time. Built during the **[Hackathon Name]** hackathon.
+Aureum is a next-generation, AR/VR-inspired spatial interior designer web application. It bridges the gap between text-based neural models and physical spaces by digitizing real-world environments and generating photorealistic style transformations in real-time. Built during the **Google Ideathon** hackathon.
 
 ---
 
